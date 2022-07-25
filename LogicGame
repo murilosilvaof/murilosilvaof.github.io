@@ -1,0 +1,686 @@
+///Discente:Murilo Francisco da Silva
+///Docente: Idalmis Millian
+///Bacharelando em Ciências e Tecnologia
+
+
+/////Variaveis de largura,altura,posições//////
+var xB;var yB1;var yB2;var yB3;
+var alturaB;var larguraB;var arredondaB;
+var fundo;
+var xp1;var xp2;
+var l;var a;var x1, x2, x3, x4, x5;var y1
+var l;var al
+var nivel=1
+var a =[];var b= [];var c= [];var d =[];var e=[];var f =[];var g=[];var h=[];var j=[];var l=[];var m=[];var n=[];var k=[];var o=[]
+var numeros = [];var numeros1=[];var numero2 = []
+
+var tela = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  
+  ////////Imagens Para Usar no Jogo///////////
+  fundo =loadImage('img.menu.jfif');
+  fundo2=loadImage('fundo2.gif')
+  gato1= loadImage('gato1.gif')
+  gato2= loadImage('gato2.webp')
+  garoto1=loadImage('Garoto1.gif')
+  garota1=loadImage('Garota1.webp')
+  dino1=loadImage('dino.gif')
+  Murilo= loadImage('Murilo.jpg')
+  Murilo1=loadImage('Murilo1.gif')
+  Idalmis=loadImage('educadora.jfif')
+  
+  //Dando valor para Definir Altura x Largura e posição das Variaveis
+  xB = 100;
+  yB1 = 150;
+  yB2 = 230
+  yB3 = 310
+  larguraB = 200;
+  alturaB = 60;
+  arredondaB = 10
+  xp1 =25
+  xp2 = 25
+  l= 40
+  a1 = 40
+  x1=25;x2=95;x3=165;x4=235;x5=305;
+  y1=265
+  l1=60
+  al=60
+  
+}
+
+function draw() {
+  if ( tela == 0) { 
+    menu(); 
+  }
+  if ( tela == 1) {
+    tela1(); 
+  }
+  if ( tela == 2) {
+    tela2(); 
+  }
+  if ( tela == 3) {
+    tela3(); 
+  }
+  if( tela== 4){
+    if(nivel ==1){
+      tela1()
+    }
+  }
+  if(tela ==5){
+    tela5()
+  }
+  if(tela==6){
+    tela6()
+  }
+  if(tela==7){
+    tela7()
+  }
+  if(tela==8){
+    tela8()
+  }
+  if(tela==9){
+    tela9()
+  }
+  if(tela==10){
+    tela10()
+  }
+}
+function menu(){
+  background(fundo);
+      textSize(30);
+  
+   
+  
+    
+  if (mouseY > yB1 && mouseY < yB1 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+     if (mouseIsPressed){
+    console.log( "botão 1")
+       tela = 1
+     }
+      fill(173,216,230);
+  }
+  fill (220)
+  text ("Iniciar", xB + 60,yB1+40);
+    fill(220,220,220);
+  
+  if (mouseY > yB2 && mouseY < yB2 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+     if (mouseIsPressed) {
+    console.log( "botão 2")
+       tela = 2
+  }
+      fill( 95,158,160)
+  }
+  fill (220)
+  text ("Instruções", xB + 28,yB2 + 40);
+  fill(255)
+  
+  if (mouseY > yB3 && mouseY < yB3 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 3
+  }
+      fill( 95,158,160)
+  } 
+  fill(220)
+  text ("Créditos", xB + 45,yB3 + 40);
+  fill(255)
+  
+}
+
+  ////// LEVEL 1 ///////
+
+function tela1(){
+  background(fundo2);
+   fill(248,248,255)
+  textSize(25);
+  noStroke( );
+  fill(255)
+   if (mouseY >xp2 && mouseY < xp2 + a1 && mouseX > xp1 && mouseX < xp1 + l){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 3
+  }
+     fill(248,248,255)
+  } 
+
+  stroke (200)
+  fill(248,248,255)
+  textSize(18)
+  text('Precione ESC para voltar ao Inicio',150,35);
+  fill(220,220,220)
+
+    if (keyIsDown(ESCAPE))(tela=0)
+
+    
+  noStroke( )
+  textSize(30);
+  textFont('FANTASY')
+  fill	(220)//cor da pergunta
+  text( "Qual a resposta correta? ", 20,150);
+  fill(248,248,255)
+  noStroke()
+  textSize(15);
+  text('L E V E L : 1 ', 33, 50);
+  
+     fill(0)//cor da equação da pergunta
+  strokeWeight(4);
+stroke(51)
+  rect(70,200,150,60,20)//posição
+  noStroke( )
+  textSize(50)//tamanho do texto
+  fill(248,248,255)//cor do texto
+  text(a+"+"+ b+"=", 80,250 )
+  noFill()
+     fill(0)//cor do bloco de resposta
+  strokeWeight(4);
+stroke(51)
+   rect(240,200,60,60,20)
+  fill(228,248,255)
+  text("_",255, 240)
+  
+  noFill()
+  strokeWeight(4);
+stroke(51)
+  
+  /////Blocos de Respostas do Level 1///////
+  
+   if(mouseX>25 && mouseX<25+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(25,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 5
+   }
+   if(mouseX>95 && mouseX<95+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(95,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+  if(mouseX>165 && mouseX<165+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(165,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>235 && mouseX<235+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(235,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>305 && mouseX<305+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(305,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+    
+  noStroke( );
+  textSize(35)
+  fill(0)
+  text(numeros, 40, 310)
+  text(c, 115, 310)
+  text(d, 185, 310)
+  text(e, 255, 310)
+  text (f, 320, 310)
+   
+}
+for(i=0; i<1; i++){
+  a[i]=Math.floor(Math.random()*10)
+}
+for(i=0; i<1; i++){
+  b[i]=Math.floor(Math.random()*10)
+}
+
+for(i=0; i<1; i++){
+ numeros=a[i]+b[i]
+}
+
+ for(i=0; i<1; i++){
+  c[i]=Math.floor(Math.random()*10)
+ }
+ for(i=0; i<1; i++){
+  d[i]=Math.floor(Math.random()*10)
+ }
+ for(i=0; i<1; i++){
+  e[i]=Math.floor(Math.random()*10)
+ }
+for(i=0; i<1; i++){
+  f[i]=Math.floor(Math.random()*10)
+ }
+
+
+
+
+function tela2(){
+  background(fundo2);
+  fill(248,248,255);
+  textSize(18)
+  text('Precione ESC para voltar ao Inicio',120,35);
+  fill(105,200,100)
+
+  fill(248,248,255)
+  textSize(30);
+  text( "Como Jogar:", 93,130);
+  textSize(20)
+  fill	(0)
+  text( "Resolva os problemas matemáticos", 20, 190);
+  text( "que a questão pede usando a lógica e", 20, 230);
+  text( "selecine uma das 5 opções.",20,270)
+       text("(existe apenas uma correta).", 30, 295);
+
+
+
+
+
+  if (keyIsDown(ESCAPE))(tela=0)
+}
+   //////Tela de Créditos///////
+
+function tela3(){
+  background(fundo2);
+      image(Murilo,230,100,130,130)
+      image(Idalmis,230,250,130,130)
+  fill(255);
+  fill(105,200,100)
+  fill(248,248,255) //Cor da aba Creditos
+  textSize(32);
+  text( "Créditos: ", 30,100);
+  fill(30,43,250);//cor dos nomes 
+  textSize(25)
+  text( "Murilo Silva", 50, 150);
+  text( "Idalmis Millian", 50, 250);
+  textSize(20)
+  fill(248,248,255)//Cor da aba Programador e Educadora
+  text( "programador", 80, 180);
+  text( "Educadora", 80, 280);
+  textSize(18)
+  text('Precione ESC para voltar ao Inicio',105,15);
+  
+  if (keyIsDown(ESCAPE))(tela=0)
+  
+}
+//////TELA PASSOU DE LEVEL 1////////
+
+function tela5(){
+  background(fundo2);
+    image(dino1,500,40,80,90)
+    
+   fill(128)//cor do rect do texto de parabens
+  noStroke()
+  rect(80,120, 260, 250, 20);
+  textSize(32)
+    fill(0);
+  text("Parabéns!",100,170) 
+    textSize(22)
+  text("Você passou de fase,", 100, 210);
+  text("clique no botão a baixo", 90, 250)
+  text("para continuar!!", 100, 290)
+  
+  textSize(20)
+  text('Precione ESC para voltar ao Inicio',145,35);
+  fill(105,200,100)
+
+  
+  
+  //////Botão próxima Fase//////
+  
+     fill(220)
+
+  if (mouseY > yB3 && mouseY < yB3 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 7
+  }
+     stroke(85,107,47)
+      fill( 95,158,160)
+  } 
+  stroke(85,107,47 )
+
+  rect ( xB , yB3, larguraB, alturaB, arredondaB);
+  fill(0)
+  textSize(25)
+      noStroke()
+  text ("Próxima fase", xB + 35,yB3 + 40);
+  fill(225)
+}
+////// Tela de resposta Errada //////
+
+function tela6(){
+  background(fundo2);
+    image(gato1,450,40,80,90)
+    image(gato2,135,40,80,90)
+  
+   fill(105,200,100)
+  noStroke()
+  rect(80,120, 260, 250, 20);
+  textSize(32)
+    fill(228,248,255);
+  text("Você Perdeu!",100,170) 
+    textSize(22)
+  text("clique no botão a baixo", 100, 210)
+  text("para tentar novamente...", 100, 250)
+  
+  
+  /////Botão tente novamente////
+     fill(220)
+
+  if (mouseY > yB3 && mouseY < yB3 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 4
+  }
+     stroke(85,107,47)
+      fill( 95,158,160)
+  } 
+  stroke(85,107,47 )
+
+  rect ( xB , yB3, larguraB, alturaB, arredondaB);
+  fill(0)
+  textSize(25)
+      noStroke()
+  text ("Tente novamente", xB + 15,yB3 + 40);
+  fill(255)
+}
+
+  ////// Level 2 ///////
+
+function tela7(){
+  background(fundo2);
+   fill(248,248,255)
+  textSize(25);
+  noStroke( );
+  fill( 255)
+   if (mouseY >xp2 && mouseY < xp2 + a1 && mouseX > xp1 && mouseX < xp1 + l){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 3
+  }
+     fill( 248,248,255)
+  } 
+
+  stroke (200)
+  fill(248,248,255)
+  textSize(18)
+  text('Precione ESC para voltar ao Inicio',150,35);
+  fill(220,220,220)
+
+  
+
+    if (keyIsDown(ESCAPE))(tela=0)
+  
+  noStroke( )
+  textSize(30);
+  textFont('FANTASY')
+  fill(220)
+  text( "Qual o resultado da subtração? ",15,150);
+  fill(248,248,255)
+  noStroke()
+  textSize(15);
+  text('L E V E L : 2 ', 33, 50);
+  
+     fill(0)
+  strokeWeight(4);
+stroke(51)
+  rect(70,200,150,60,20)
+  noStroke( )
+  textSize(50)
+  fill(248,248,255)
+   text(g+"-"+h+"=", 80,250 )
+  noFill()
+     fill(0)
+  strokeWeight(4);
+stroke(51)
+   rect(240,200,60,60,20)
+  fill(228,248,255)
+  text("_",255, 240)
+  
+  noFill()
+  strokeWeight(4);
+stroke(51)
+  
+  ////// Blocos de Opções de Respostas do Level 2 //////
+   if(mouseX>25 && mouseX<25+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(25,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>95 && mouseX<95+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(95,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+  if(mouseX>165 && mouseX<165+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(165,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>235 && mouseX<235+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(235,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 9
+   }
+   if(mouseX>305 && mouseX<305+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(305,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+    
+  noStroke( );
+  textSize(35)
+  fill(0)
+  text(e, 40, 310)
+  text(c, 115, 310)
+  text(d, 185, 310)
+  text(numeros1, 255, 310)
+  text (f, 320, 310)
+   
+}
+for(i=0; i<1; i++){
+  g[i]=Math.floor(Math.random()*10)
+}
+for(i=0; i<1; i++){
+  h[i]=Math.floor(Math.random()*10)
+}
+
+for(i=0; i<1; i++){
+ numeros1= g-h
+}
+
+ for(i=0; i<1; i++){
+  j[i]=Math.floor(Math.random()*10)
+ }
+ 
+for(i=0; i<1; i++){
+  k[i]=Math.floor(Math.random()*10)
+ }
+
+///////// Level 3 //////////
+
+function tela8(){
+  background(fundo2);
+   fill(248,248,255)
+  textSize(25);
+  noStroke( );
+  fill(255)
+   if (mouseY >xp2 && mouseY < xp2 + a1 && mouseX > xp1 && mouseX < xp1 + l){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 3
+  }
+     fill(248,248,255)
+  } 
+
+  stroke (200)
+  fill(248,248,255)
+  
+  textSize(18)
+  text('Precione ESC para voltar ao Inicio',150,35);
+  fill(220)
+
+    if (keyIsDown(ESCAPE))(tela=0)
+
+  noStroke( )
+  textSize(30);
+  textFont('FANTASY')
+  fill(220)
+  text( "Qual o Resultado Correto? ", 20,150);
+  fill(248,248,255)
+  noStroke()
+  textSize(15);
+  text('L E V E L : 3 ', 33, 50);
+  
+     fill(0)
+  strokeWeight(4);
+stroke(51)
+  rect(70,200,150,60,20)
+  noStroke( )
+  textSize(50)
+  fill(248,248,255)
+  text(n+"+"+ o+"=", 80,250 )
+  noFill()
+     fill(0)
+  strokeWeight(4);
+stroke(51)
+   rect(240,200,60,60,20)
+  fill(228,248,255)
+  text("_",255, 240)
+  
+  noFill()
+  strokeWeight(4);
+stroke(51)
+   if(mouseX>25 && mouseX<25+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(25,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>95 && mouseX<95+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(95,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+  if(mouseX>165 && mouseX<165+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(165,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>235 && mouseX<235+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(235,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 6
+   }
+   if(mouseX>305 && mouseX<305+60 && mouseY>265 && mouseY<265+60){
+  stroke(250)
+  fill(220)
+  rect(305,265,60,60,20)
+  if(mouseIsPressed)
+      tela = 10
+   }
+    
+  noStroke( );
+  textSize(35)
+  fill(0)
+  text(b, 40, 310)
+  text(c, 115, 310)
+  text(d, 185, 310)
+  text(e, 255, 310)
+  text (numeros2, 320, 310)
+   
+}
+for(i=0; i<1; i++){
+  n[i]=Math.floor(Math.random()*20)
+}
+for(i=0; i<1; i++){
+  o[i]=Math.floor(Math.random()*20)
+}
+
+for(i=0; i<1; i++){
+ numeros2=n[i]+o[i]
+}
+
+ for(i=0; i<1; i++){
+  l[i]=Math.floor(Math.random()*20)
+ }
+ for(i=0; i<1; i++){
+  m[i]=Math.floor(Math.random()*20)
+ }
+
+///// Tela passou de Level 2 //////
+
+function tela9(){
+  background(fundo2);
+   fill(128)
+  noStroke()
+  rect(80,120, 260, 250, 20);
+  textSize(32)
+    fill(0);
+  text("Parabéns!",100,170) 
+    textSize(22)
+  text("Vamos Para a Próxima Fase,", 90, 210);
+  text("clique no botão a baixo", 90, 250)
+  text("para prosseguir", 90, 290)
+  
+  
+  ///Botão próxima Fase 3///
+  
+     fill(220)
+
+  if (mouseY > yB3 && mouseY < yB3 + alturaB && mouseX > xB && mouseX < xB + larguraB){
+    if (mouseIsPressed){
+    console.log( "botão 3")
+      tela = 8
+  }
+     stroke(85,107,47)
+      fill( 95,158,160)
+  } 
+  stroke(85,107,47 )
+
+  rect ( xB , yB3, larguraB, alturaB, arredondaB);
+  fill(0)
+  textSize(25)
+      noStroke()
+  text ("Próxima fase", xB + 35,yB3 + 40);
+  fill(255)
+}
+
+function tela10(){
+  background(fundo2);
+     image(dino1,500,40,80,90)
+    
+   fill(105,200,100)
+  noStroke()
+  rect(80,120, 260, 250, 20);
+  textSize(32)
+    fill(228,248,255);
+  text("Parabéns!",150,170) 
+    textSize(20)
+  text("Você Ganhou ", 140, 210);
+  text("Muito Bem!", 140, 250)
+  text('Precione ESC para Sair',150,15);
+   if (keyIsDown(ESCAPE))(tela=0)
+}
